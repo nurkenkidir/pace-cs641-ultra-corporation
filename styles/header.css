@@ -1,0 +1,60 @@
+.header {
+  margin-bottom: 2rem;
+  padding-block: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.header .logo {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.header .burger {
+  cursor: pointer;
+  justify-self: end;
+}
+
+.header .burger .lucide-menu {
+  transition: all var(--transition-fast);
+}
+
+.header .burger .lucide-menu:hover {
+  stroke: var(--text-secondary);
+}
+
+.header .links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header .burger {
+    display: none;
+  }
+
+  .header .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+  }
+
+  .header .links li {
+    transition: transform var(--transition-base);
+  }
+
+  .header .links li:hover {
+    transform: translateY(1px);
+  }
+
+  .header .links li a {
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .header .links li a:hover {
+    color: var(--text-secondary);
+  }
+}
